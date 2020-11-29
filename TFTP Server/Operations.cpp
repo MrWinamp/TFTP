@@ -79,9 +79,9 @@ void Operations::RRQ(SOCKET* _accept, char* recvbuf, char* sendbuf, int buflen)
 
 			sendbuf[0] = '0'; // Устанавливам код операции
 			sendbuf[1] = '3';
-			sendbuf[3] = number[0]; // Устанавливаем номер блока
-			sendbuf[4] = number[1];
-			for (i = 5; i < 512 && !feof(file); i++) // Кладем данные
+			sendbuf[2] = number[0]; // Устанавливаем номер блока
+			sendbuf[3] = number[1];
+			for (i = 4; i < 512 && !feof(file); i++) // Кладем данные
 			{
 				fscanf_s(file, "%c", &tmp);
 				sendbuf[i] = tmp;
@@ -183,7 +183,7 @@ void Operations::WRQ(SOCKET* _accept, char* recvbuf, char* sendbuf, int buflen)
 
 			DATA(_accept, recvbuf, buflen);
 
-			for (i = 5; i < (int)strlen(recvbuf); i++) // Считываем данные
+			for (i = 4; i < (int)strlen(recvbuf); i++) // Считываем данные
 			{
 				tmp = recvbuf[i];
 				fprintf_s(file, "%c", tmp);
