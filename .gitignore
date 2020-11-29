@@ -1,0 +1,20 @@
+
+.vs/TFTP Server/v16/
+
+*.obj
+
+*.log
+
+Debug/somefile.txt
+
+Debug/file.txt
+
+*.recipe
+
+*.tlog
+
+TFTP Server/Debug/vc142.pdb
+
+TFTP Server/Debug/vc142.idb
+
+TFTP Server/Debug/TFTP Server.vcxproj.FileListAbsolute.txt
